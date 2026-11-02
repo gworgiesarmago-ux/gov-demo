@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: "#0038A8",
+            "brand-hover": "#002b82",
+            border: "#E2E8F0"
+          },
+          fontFamily: {
+            sans: ["Public Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Public Sans', sans-serif;
+        background-color: #F8FAFC;
+        color: #0F172A;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-900 min-h-screen flex flex-col antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white border-b border-slate-200 pt-safe">
+<div class="h-14 px-4 flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="text-[17px] text-[#0038A8] font-semibold tracking-normal truncate">SugboStart</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold text-slate-600 bg-slate-100 border border-slate-200">
+          LGU CONNECTED
+        </span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button aria-label="Notifications" class="w-9 h-9 flex items-center justify-center rounded-md text-slate-600 hover:bg-slate-100 border border-slate-200 transition-colors relative" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#CE1126]"></span>
+</button>
+<div class="w-8 h-8 rounded-md border border-slate-200 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W0BINFe-lwe5yoDRlrBTHPnosDT5KalN8UacK6lpSPsl2VBu-0NueNCQU5CFGEYOJisEp47br9bZD4iIj9Y0WxLX3SVVZ3gX622VgJ0mTQmm7MBVLIogvmPxcthV-HXUZWPd_sofckUrHvSS9UA36Ggd7DDfpRW0_-CIx521Wt0MasD_OPG6QUVseMefB0gCpMdIsALh4eBRfrt5CyBuE60bwAT4PjPp9y7R5eTgVtHBNsIGSouQaGsEGu"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-[#F8FAFC]">
+<div class="flex flex-col w-full max-w-md mx-auto p-4 gap-4">
+<!-- Business Identity Card (Crisp Solid Deep Blue Container) -->
+<section class="bg-[#0038A8] text-white rounded-md p-4 border border-blue-900 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="min-w-0 flex-1">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-semibold tracking-normal text-white bg-blue-900/60 border border-blue-700/50 mb-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Civic Vault Live
+            </div>
+<h1 class="text-[19px] font-semibold text-white truncate">
+              Sugbo Artisan Coffee
+            </h1>
+<p class="text-[13px] text-blue-100 font-normal mt-0.5">
+              Verified Civic Credentials &amp; Official Registration Numbers
+            </p>
+</div>
+<span class="material-symbols-outlined text-white text-[24px] shrink-0">verified_user</span>
+</div>
+<div class="pt-2 border-t border-blue-800/80 flex items-center justify-between text-[12px]">
+<div class="flex items-center gap-1.5 text-blue-100 font-normal truncate">
+<span class="material-symbols-outlined text-[16px] text-blue-200 shrink-0">lock</span>
+<span class="truncate">PSA &amp; LGU Cebu Encrypted Key</span>
+</div>
+<span class="font-semibold text-white text-[11px] shrink-0">Active Sync</span>
+</div>
+</section>
+<!-- Digital Credential Cards Section -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-700 text-[18px]">badge</span>
+<h2 class="text-[15px] font-semibold text-slate-900">Digital Clearances</h2>
+</div>
+<span class="text-[12px] font-semibold text-[#0038A8] px-2 py-0.5 rounded bg-blue-50 border border-blue-200">
+            2 / 3 Issued
+          </span>
+</div>
+<!-- Card 1: DTI Certificate -->
+<div class="bg-white rounded-md p-4 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-slate-700 text-[20px] mt-0.5 shrink-0">corporate_fare</span>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[14px] font-semibold text-slate-900 truncate">DTI Business Name</span>
+<span class="px-1.5 py-0.2 rounded text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200">
+                    Verified
+                  </span>
+</div>
+<p class="text-[12px] text-slate-600 font-normal truncate mt-0.5">Department of Trade &amp; Industry (Region VII)</p>
+</div>
+</div>
+<button aria-label="Show QR Code" class="w-8 h-8 rounded-md bg-white hover:bg-slate-50 text-slate-700 transition-colors shrink-0 border border-slate-200 flex items-center justify-center" onclick="toggleQrModal('DTI-09412891')" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+</div>
+<div class="bg-slate-50 rounded-md p-2.5 grid grid-cols-2 gap-2 border border-slate-200">
+<div>
+<span class="text-[11px] text-slate-500 block font-normal">Registration No.</span>
+<span class="text-[14px] text-slate-900 font-semibold font-mono">09412891</span>
+</div>
+<div>
+<span class="text-[11px] text-slate-500 block font-normal">Validity Expiry</span>
+<span class="text-[13px] text-slate-900 font-semibold">Oct 24, 2028</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-0.5">
+<span class="text-[12px] text-slate-600 font-normal truncate">
+              Auth Sign: DTI-CEB-2023-88X
+            </span>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#0038A8] text-white text-[13px] font-semibold hover:bg-blue-900 transition-colors shrink-0" onclick="triggerToast('Downloading DTI Certificate PDF...')" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+              View PDF
+            </button>
+</div>
+</div>
+<!-- Card 2: Mayor's Permit (BPLO) -->
+<div class="bg-white rounded-md p-4 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-slate-700 text-[20px] mt-0.5 shrink-0">account_balance</span>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[14px] font-semibold text-slate-900 truncate">Mayor's Permit (BPLO)</span>
+<span class="px-1.5 py-0.2 rounded text-[11px] font-semibold text-amber-800 bg-amber-50 border border-amber-200">
+                    Processing
+                  </span>
+</div>
+<p class="text-[12px] text-slate-600 font-normal truncate mt-0.5">Cebu City Hall Licensing Division</p>
+</div>
+</div>
+<button aria-label="Show QR Code" class="w-8 h-8 rounded-md bg-white hover:bg-slate-50 text-slate-700 transition-colors shrink-0 border border-slate-200 flex items-center justify-center" onclick="toggleQrModal('BPLO-CC-2024-008912')" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+</div>
+<div class="bg-slate-50 rounded-md p-2.5 grid grid-cols-2 gap-2 border border-slate-200">
+<div>
+<span class="text-[11px] text-slate-500 block font-normal">Tracking Identifier</span>
+<span class="text-[13px] text-slate-900 font-semibold font-mono truncate block">CC-BPLO-2024-008912</span>
+</div>
+<div>
+<span class="text-[11px] text-slate-500 block font-normal">Turnaround SLA</span>
+<span class="text-[13px] text-slate-900 font-semibold">Est. 3 days left</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 pt-0.5">
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-slate-600 font-normal">Barangay &amp; Sanitary Assessed</span>
+<span class="font-semibold text-slate-900">Step 3 of 4</span>
+</div>
+<div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-[#0038A8]" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: BIR Certificate of Registration -->
+<div class="bg-white rounded-md p-4 border border-slate-200 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-slate-700 text-[20px] mt-0.5 shrink-0">receipt_long</span>
+<div class="min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[14px] font-semibold text-slate-900 truncate">BIR Form 2303 (COR)</span>
+<span class="px-1.5 py-0.2 rounded text-[11px] font-semibold text-slate-600 bg-slate-100 border border-slate-200">
+                    Scheduled
+                  </span>
+</div>
+<p class="text-[12px] text-slate-600 font-normal truncate mt-0.5">RDO 082 - South Cebu City</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[20px] shrink-0">lock</span>
+</div>
+<div class="bg-slate-50 rounded-md p-2.5 flex items-center justify-between gap-2 border border-slate-200">
+<div class="min-w-0">
+<span class="text-[11px] text-slate-500 block font-normal">Registered Taxpayer TIN</span>
+<span class="text-[13px] text-slate-900 font-semibold font-mono">742-991-002-00000</span>
+</div>
+<button class="px-2.5 py-1 rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 text-[12px] font-semibold flex items-center gap-1 shrink-0" onclick="copyValue('742-991-002-00000', 'BIR TIN')" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+              Copy
+            </button>
+</div>
+<p class="text-[12px] text-slate-600 font-normal flex items-start gap-1">
+<span class="material-symbols-outlined text-[16px] text-slate-500 shrink-0 mt-0.5">info</span>
+<span>Automatic submission initiates once LGU BPLO permit is stamped.</span>
+</p>
+</div>
+</section>
+<!-- Employer Mandates Quick Access -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-700 text-[18px]">badge</span>
+<h2 class="text-[15px] font-semibold text-slate-900">Employer Social Mandates</h2>
+</div>
+<span class="text-[12px] text-slate-500 font-normal">Phase 4 Ready</span>
+</div>
+<div class="bg-white rounded-md border border-slate-200 divide-y divide-slate-200">
+<!-- SSS -->
+<div class="p-3 flex items-center justify-between gap-3">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-[13px] font-semibold text-slate-900 truncate">Social Security System (SSS)</span>
+<span class="material-symbols-outlined text-[15px] text-emerald-600 shrink-0">check_circle</span>
+</div>
+<span class="text-[12px] font-mono text-slate-600 block mt-0.5">03-9182391-4</span>
+</div>
+<button class="h-8 px-2.5 rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 text-[12px] font-semibold flex items-center gap-1 shrink-0 transition-colors" onclick="copyValue('03-9182391-4', 'SSS Employer ID')" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+              Copy
+            </button>
+</div>
+<!-- PhilHealth -->
+<div class="p-3 flex items-center justify-between gap-3">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-[13px] font-semibold text-slate-900 truncate">PhilHealth Employer</span>
+<span class="material-symbols-outlined text-[15px] text-emerald-600 shrink-0">check_circle</span>
+</div>
+<span class="text-[12px] font-mono text-slate-600 block mt-0.5">21-029381940-1</span>
+</div>
+<button class="h-8 px-2.5 rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 text-[12px] font-semibold flex items-center gap-1 shrink-0 transition-colors" onclick="copyValue('21-029381940-1', 'PhilHealth Employer No.')" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+              Copy
+            </button>
+</div>
+<!-- Pag-IBIG -->
+<div class="p-3 flex items-center justify-between gap-3">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-[13px] font-semibold text-slate-900 truncate">Pag-IBIG / HDMF</span>
+<span class="material-symbols-outlined text-[15px] text-emerald-600 shrink-0">check_circle</span>
+</div>
+<span class="text-[12px] font-mono text-slate-600 block mt-0.5">1209-3819-2810</span>
+</div>
+<button class="h-8 px-2.5 rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 text-[12px] font-semibold flex items-center gap-1 shrink-0 transition-colors" onclick="copyValue('1209-3819-2810', 'Pag-IBIG ID')" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+              Copy
+            </button>
+</div>
+</div>
+</section>
+<!-- Compliance Deadlines -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-700 text-[18px]">event</span>
+<h2 class="text-[15px] font-semibold text-slate-900">Compliance Deadlines</h2>
+</div>
+<button class="text-[12px] font-semibold text-[#0038A8] flex items-center gap-1 hover:underline" onclick="triggerToast('Deadlines synced with your Calendar')" type="button">
+<span class="material-symbols-outlined text-[15px]">sync</span>
+            Sync Calendar
+          </button>
+</div>
+<div class="bg-white rounded-md border border-slate-200 divide-y divide-slate-200">
+<!-- Item 1: Critical -->
+<div class="p-3 flex items-start gap-3">
+<div class="w-12 py-1.5 rounded-md bg-red-600 text-white flex flex-col items-center justify-center shrink-0">
+<span class="text-[10px] font-semibold leading-tight uppercase">JAN</span>
+<span class="text-[16px] font-semibold leading-none mt-0.5">20</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="text-[13px] font-semibold text-slate-900 truncate">LGU Business Permit Renewal</span>
+<span class="text-[10px] font-semibold text-red-700 bg-red-50 border border-red-200 px-1.5 py-0.2 rounded uppercase shrink-0">Critical</span>
+</div>
+<p class="text-[12px] text-slate-600 font-normal mt-0.5">
+                Cebu City BPLO annual renewal cutoff to avoid 25% surcharge penalties.
+              </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3 flex items-start gap-3">
+<div class="w-12 py-1.5 rounded-md bg-slate-100 text-slate-900 border border-slate-200 flex flex-col items-center justify-center shrink-0">
+<span class="text-[10px] font-semibold leading-tight text-slate-500 uppercase">JAN</span>
+<span class="text-[16px] font-semibold leading-none mt-0.5">31</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="text-[13px] font-semibold text-slate-900 truncate">BIR Annual Registration Fee</span>
+<span class="text-[11px] font-normal text-slate-500 shrink-0">Form 0605</span>
+</div>
+<p class="text-[12px] text-slate-600 font-normal mt-0.5">
+                Annual registration validation and official physical manual books stamping.
+              </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 flex items-start gap-3">
+<div class="w-12 py-1.5 rounded-md bg-slate-100 text-[#0038A8] border border-slate-200 flex flex-col items-center justify-center shrink-0">
+<span class="text-[10px] font-semibold leading-tight uppercase">MTH</span>
+<span class="text-[16px] font-semibold leading-none mt-0.5">15</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="text-[13px] font-semibold text-slate-900 truncate">SSS &amp; PhilHealth Remittance</span>
+<span class="text-[11px] font-semibold text-[#0038A8] shrink-0">Recurring</span>
+</div>
+<p class="text-[12px] text-slate-600 font-normal mt-0.5">
+                Monthly employee statutory contribution electronic filing cutoff.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Export Packet & Security Box -->
+<section class="flex flex-col gap-3 pb-4">
+<div class="bg-white border border-slate-200 rounded-md p-4 flex flex-col gap-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#0038A8] text-[22px] shrink-0 mt-0.5">verified</span>
+<div class="min-w-0 flex-1">
+<h3 class="text-[14px] font-semibold text-slate-900">
+                LGU Cryptographic Verification
+              </h3>
+<p class="text-[12px] text-slate-600 font-normal mt-0.5">
+                Every credential in this vault contains an unalterable civic digital signature recognized by DTI, BIR RDO 082, and Cebu City Hall inspectors.
+              </p>
+</div>
+</div>
+<button class="w-full h-10 rounded-md bg-[#0038A8] hover:bg-blue-900 text-white text-[13px] font-semibold flex items-center justify-center gap-1.5 transition-colors" onclick="triggerToast('Assembling compliance packet .ZIP...')" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_zip</span>
+            Export Full Compliance Packet (.ZIP)
+          </button>
+</div>
+</section>
+</div>
+<!-- QR Code Modal Dialog -->
+<div class="fixed inset-0 z-50 bg-slate-900/60 hidden items-center justify-center p-4" id="qrModal">
+<div class="bg-white text-slate-900 w-full max-w-sm rounded-md p-4 flex flex-col items-center text-center gap-3 border border-slate-200">
+<div class="flex items-center justify-between w-full">
+<span class="text-[#0038A8] text-[12px] font-semibold">
+            LGU Inspector Validated
+          </span>
+<button class="w-7 h-7 flex items-center justify-center rounded-md bg-slate-100 text-slate-600 hover:bg-slate-200" onclick="toggleQrModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="p-3 bg-slate-50 rounded-md flex flex-col items-center justify-center border border-slate-200">
+<svg class="text-slate-900 fill-current" height="160" viewbox="0 0 180 180" width="160">
+<!-- QR Markers -->
+<rect fill="#0038A8" height="45" rx="2" width="45" x="10" y="10"></rect>
+<rect fill="#ffffff" height="29" rx="1" width="29" x="18" y="18"></rect>
+<rect fill="#0038A8" height="17" rx="1" width="17" x="24" y="24"></rect>
+<rect fill="#0038A8" height="45" rx="2" width="45" x="125" y="10"></rect>
+<rect fill="#ffffff" height="29" rx="1" width="29" x="133" y="18"></rect>
+<rect fill="#0038A8" height="17" rx="1" width="17" x="139" y="24"></rect>
+<rect fill="#0038A8" height="45" rx="2" width="45" x="10" y="125"></rect>
+<rect fill="#ffffff" height="29" rx="1" width="29" x="18" y="133"></rect>
+<rect fill="#0038A8" height="17" rx="1" width="17" x="24" y="139"></rect>
+<!-- Data Grid -->
+<rect fill="#0F172A" height="10" width="10" x="65" y="15"></rect>
+<rect fill="#0F172A" height="10" width="10" x="85" y="15"></rect>
+<rect fill="#0F172A" height="10" width="10" x="105" y="15"></rect>
+<rect fill="#0F172A" height="10" width="20" x="65" y="35"></rect>
+<rect fill="#0F172A" height="10" width="10" x="95" y="35"></rect>
+<rect fill="#0F172A" height="20" width="10" x="15" y="65"></rect>
+<rect fill="#0F172A" height="10" width="20" x="35" y="75"></rect>
+<rect fill="#0F172A" height="10" width="10" x="65" y="65"></rect>
+<rect fill="#0F172A" height="10" width="20" x="85" y="65"></rect>
+<rect fill="#0F172A" height="20" width="10" x="115" y="65"></rect>
+<rect fill="#0F172A" height="10" width="20" x="135" y="65"></rect>
+<rect fill="#0F172A" height="20" width="10" x="160" y="75"></rect>
+<circle cx="90" cy="90" fill="#0038A8" r="14"></circle>
+<rect fill="#0F172A" height="10" width="30" x="15" y="95"></rect>
+<rect fill="#0F172A" height="20" width="10" x="65" y="85"></rect>
+<rect fill="#0F172A" height="10" width="20" x="115" y="95"></rect>
+<rect fill="#0F172A" height="20" width="10" x="145" y="95"></rect>
+<rect fill="#0F172A" height="10" width="20" x="65" y="115"></rect>
+<rect fill="#0F172A" height="10" width="10" x="95" y="115"></rect>
+<rect fill="#0F172A" height="10" width="30" x="125" y="115"></rect>
+<rect fill="#0F172A" height="20" width="10" x="65" y="135"></rect>
+<rect fill="#0F172A" height="10" width="20" x="85" y="145"></rect>
+<rect fill="#0F172A" height="10" width="10" x="115" y="135"></rect>
+<rect fill="#0F172A" height="20" width="20" x="135" y="145"></rect>
+<rect fill="#0F172A" height="10" width="10" x="160" y="135"></rect>
+<rect fill="#0F172A" height="10" width="30" x="65" y="160"></rect>
+<rect fill="#0F172A" height="10" width="20" x="105" y="160"></rect>
+</svg>
+</div>
+<div class="flex flex-col gap-0.5 w-full">
+<span class="text-[14px] font-semibold text-slate-900 font-mono" id="qrCardLabel">DTI-09412891</span>
+<span class="text-[12px] text-slate-600 font-normal">Present to City Licensing &amp; BPLO Field Auditors</span>
+</div>
+<button class="w-full h-9 rounded-md bg-slate-100 text-slate-800 text-[13px] font-semibold hover:bg-slate-200 transition-colors" onclick="toggleQrModal()" type="button">
+          Dismiss
+        </button>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-20 inset-x-4 z-50 pointer-events-none transform translate-y-12 opacity-0 transition-all duration-200 flex justify-center" id="toastNotification">
+<div class="bg-slate-900 text-white px-3.5 py-2 rounded-md flex items-center gap-2 max-w-sm pointer-events-auto border border-slate-700">
+<span class="material-symbols-outlined text-white text-[18px] shrink-0">check</span>
+<span class="text-[12px] font-normal" id="toastMessage">Item copied to clipboard</span>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-white border-t border-slate-200">
+<div class="flex items-center justify-around h-14 max-w-md mx-auto">
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-slate-500 hover:text-[#0038A8]" href="#">
+<span class="material-symbols-outlined text-[20px]">alt_route</span>
+<span class="text-[11px] font-normal">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-slate-500 hover:text-[#0038A8]" href="#">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="text-[11px] font-normal">Clearances</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-slate-500 hover:text-[#0038A8]" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_document</span>
+<span class="text-[11px] font-normal">Apply</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-[#0038A8]" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-[11px] font-semibold">Vault</span>
+</a>
+</div>
+</nav>
+<script>
+    function toggleQrModal(identifier) {
+      const modal = document.getElementById('qrModal');
+      const label = document.getElementById('qrCardLabel');
+      if (identifier) {
+        label.textContent = identifier;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function triggerToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = message;
+      
+      toast.classList.remove('translate-y-12', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-12', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+
+    function copyValue(value, label) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(value);
+      }
+      triggerToast(label + ' copied: ' + value);
+    }
+  </script>
+</body></html>

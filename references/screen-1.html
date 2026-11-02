@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          brand: "#0038A8",
+          surface: "#F8FAFC",
+        },
+        fontFamily: {
+          sans: ['"Public Sans"', 'sans-serif'],
+        }
+      }
+    }
+  };
+</script>
+<style>
+@layer base { 
+  html, body { width: 100vw; margin: 0; padding: 0; font-family: 'Public Sans', sans-serif; } 
+  body { overscroll-behavior-y: none; } 
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } 
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); } 
+  main > :first-child { margin-top: 0 !important; } 
+  main > :last-child { margin-bottom: 0 !important; } 
+} 
+::-webkit-scrollbar { display: none; }
+body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="bg-surface font-sans text-slate-900 min-h-screen flex flex-col antialiased">
+<!-- Top Navigation -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white border-b border-slate-200 pt-safe">
+<div class="h-16 px-4 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0 flex-1">
+<span class="material-symbols-outlined text-[24px] text-brand shrink-0">flag</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-[18px] text-slate-900 leading-tight">SugboStart</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded border border-slate-200 text-slate-600 font-semibold text-[10px] uppercase">LGU CONNECTED</span>
+</div>
+<span class="text-[12px] text-slate-600">Roadmap</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button aria-label="Notifications" class="w-9 h-9 flex items-center justify-center rounded-md text-slate-600 hover:bg-slate-100 transition-colors relative" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-brand"></span>
+</button>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-md border border-slate-200 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1W0BINFe-lwe5yoDRlrBTHPnosDT5KalN8UacK6lpSPsl2VBu-0NueNCQU5CFGEYOJisEp47br9bZD4iIj9Y0WxLX3SVVZ3gX622VgJ0mTQmm7MBVLIogvmPxcthV-HXUZWPd_sofckUrHvSS9UA36Ggd7DDfpRW0_-CIx521Wt0MasD_OPG6QUVseMefB0gCpMdIsALh4eBRfrt5CyBuE60bwAT4PjPp9y7R5eTgVtHBNsIGSouQaGsEGu"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface">
+<div class="flex flex-col w-full">
+<!-- Hero / Business Summary Header -->
+<section class="px-4 pt-4 pb-3">
+<div class="flex items-center justify-between gap-1 mb-2">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex w-2 h-2 rounded-full bg-brand"></span>
+<span class="text-[11px] uppercase text-brand font-semibold">Lahug District • Live File</span>
+</div>
+<span class="px-2 py-0.5 rounded border border-slate-200 text-slate-600 text-[11px] font-semibold bg-white">BN-2024-98124</span>
+</div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<h1 class="text-[22px] font-semibold text-slate-900 leading-tight">Maayong adlaw, Maria!</h1>
+<p class="text-[14px] text-slate-600 mt-0.5">Sugbo Artisan Coffee &amp; Bakeshop</p>
+</div>
+<span class="material-symbols-outlined text-[28px] text-brand shrink-0">local_cafe</span>
+</div>
+<!-- Progress Card -->
+<div class="mt-3.5 p-4 rounded-md bg-white border border-slate-200 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-slate-600">verified_user</span>
+<span class="text-[14px] font-semibold text-slate-900">Sole Proprietorship • Cebu City</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-800 text-[12px] font-semibold">50% Completed</span>
+</div>
+<!-- Segmented Bar Indicator -->
+<div class="flex flex-col gap-1.5">
+<div class="w-full bg-slate-100 h-2 rounded-md overflow-hidden flex border border-slate-200">
+<div class="bg-brand h-full" style="width: 50%;"></div>
+</div>
+<div class="flex justify-between items-center text-slate-600 text-[12px]">
+<span>6 of 12 compliance steps resolved</span>
+<span class="font-semibold text-brand">Phase 2 of 4</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Urgent Next Action Container -->
+<section class="px-4 pb-3">
+<div class="rounded-md bg-white border border-slate-200 p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-brand font-semibold text-[11px] uppercase mb-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>Immediate Action Required</span>
+</div>
+<h2 class="text-[18px] text-slate-900 font-semibold leading-tight">Barangay Business Clearance</h2>
+<p class="text-[13px] text-slate-600 mt-0.5">Brgy. Lahug Hall, Gorordo Ave., Cebu City</p>
+</div>
+<span class="px-2 py-0.5 rounded border border-slate-200 text-slate-700 font-semibold text-[11px] shrink-0">1-2 Days</span>
+</div>
+<div class="p-2.5 rounded-md bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-between text-[13px]">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-slate-500 shrink-0">schedule</span>
+<span class="truncate text-[12px]">Office hours: 8:00 AM – 4:30 PM (Mon-Fri)</span>
+</div>
+<span class="text-[12px] font-semibold text-slate-900 whitespace-nowrap pl-2">Fee: ₱300</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2.5 px-4 rounded-md bg-brand hover:bg-blue-800 active:scale-[0.99] text-white font-semibold text-[14px] flex items-center justify-center gap-1.5 transition-colors" id="btn-continue-action" type="button">
+<span>Continue Application</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button aria-label="Location Map" class="w-10 h-10 rounded-md border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-slate-50 transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Roadmap Accordion / Progression Timeline -->
+<section class="px-4 pb-3 flex flex-col gap-2.5">
+<div class="flex items-center justify-between mb-0.5">
+<h3 class="text-[16px] font-semibold text-slate-900">Compliance Roadmap</h3>
+<span class="text-[12px] text-slate-600">LGU Cebu City Engine</span>
+</div>
+<!-- Phase 1: Completed -->
+<div class="rounded-md bg-white border border-slate-200 p-4 flex flex-col gap-2.5">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-900 mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] text-slate-900 font-semibold uppercase">Phase 1</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="text-[11px] text-slate-600">National Level</span>
+</div>
+<h4 class="text-[15px] font-semibold text-slate-900 mt-0.5">DTI Business Name Registration</h4>
+<p class="text-[13px] text-slate-600">Certified: "Sugbo Artisan Coffee &amp; Bakeshop"</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded border border-slate-200 text-slate-700 text-[11px] font-semibold shrink-0">Resolved</span>
+</div>
+<div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-slate-600 text-[12px]">
+<span class="material-symbols-outlined text-[16px] text-slate-500">file_download_done</span>
+<span>DTI Cert #BN-2024-98124</span>
+</div>
+<button class="text-[12px] text-brand font-semibold inline-flex items-center gap-0.5" type="button">
+<span>View e-Certificate</span>
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</button>
+</div>
+</div>
+<!-- Phase 2: Active (Current Focus) -->
+<div class="rounded-md bg-white border-2 border-brand p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[20px] text-brand mt-0.5">adjust</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] text-brand font-semibold uppercase">Phase 2 • Active</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="text-[11px] text-slate-600">1 of 4 verified</span>
+</div>
+<h4 class="text-[15px] font-semibold text-slate-900 mt-0.5">Local Government (LGU) Permits</h4>
+<p class="text-[13px] text-slate-600">City of Cebu Business Processing &amp; Licensing</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded border border-brand text-brand text-[11px] font-semibold shrink-0">In Progress</span>
+</div>
+<!-- Step Checklist within Phase 2 -->
+<div class="flex flex-col gap-1 bg-slate-50 border border-slate-200 p-2 rounded-md">
+<!-- Item 1: Complete -->
+<div class="flex items-center justify-between p-1.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-500 text-[18px]">check_circle</span>
+<span class="text-[13px] text-slate-500 line-through">Community Tax Certificate (Cedula)</span>
+</div>
+<span class="text-[12px] text-slate-500">Paid ₱150</span>
+</div>
+<!-- Item 2: Current Task -->
+<div class="flex items-center justify-between p-2 rounded-md bg-white border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand text-[18px]">radio_button_checked</span>
+<span class="text-[13px] text-slate-900 font-semibold">Barangay Lahug Business Clearance</span>
+</div>
+<span class="px-1.5 py-0.5 rounded border border-slate-200 text-slate-700 text-[11px] font-semibold">Pending</span>
+</div>
+<!-- Item 3: Queued -->
+<div class="flex items-center justify-between p-1.5 opacity-60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">radio_button_unchecked</span>
+<span class="text-[13px] text-slate-700">Zoning &amp; Locational Clearance (CPDO)</span>
+</div>
+<span class="text-[12px] text-slate-500">Stage 3</span>
+</div>
+<!-- Item 4: Queued -->
+<div class="flex items-center justify-between p-1.5 opacity-60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-[18px]">radio_button_unchecked</span>
+<span class="text-[13px] text-slate-700">BFP Fire Safety Inspection &amp; Mayor's Permit</span>
+</div>
+<span class="text-[12px] text-slate-500">Stage 4</span>
+</div>
+</div>
+</div>
+<!-- Phase 3: Up Next (Locked) -->
+<div class="rounded-md bg-white border border-slate-200 p-4 flex items-center justify-between opacity-80">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 mt-0.5">lock</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] text-slate-500 font-semibold uppercase">Phase 3</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="text-[11px] text-slate-500">Bureau of Internal Revenue</span>
+</div>
+<h4 class="text-[15px] font-semibold text-slate-800">BIR Form 2303 &amp; Books of Accounts</h4>
+<p class="text-[13px] text-slate-500">RDO 82 - Cebu City South • Authority to Print (ATP)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-slate-400 shrink-0">lock</span>
+</div>
+<!-- Phase 4: Employee Mandatory (Locked) -->
+<div class="rounded-md bg-white border border-slate-200 p-4 flex items-center justify-between opacity-70">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[20px] text-slate-400 mt-0.5">lock</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] text-slate-500 font-semibold uppercase">Phase 4</span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="text-[11px] text-slate-500">Worker Protection</span>
+</div>
+<h4 class="text-[15px] font-semibold text-slate-800">Mandatory Employer Registration</h4>
+<p class="text-[13px] text-slate-500">SSS, PhilHealth, Pag-IBIG HDMF Integration</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-slate-400 shrink-0">lock</span>
+</div>
+</section>
+<!-- Support & Estimator Quick Actions Grid -->
+<section class="px-4 pb-3 flex flex-col gap-2.5">
+<h3 class="text-[16px] font-semibold text-slate-900">Cebu Business Helpdesk</h3>
+<div class="grid grid-cols-2 gap-3">
+<!-- Fee Estimator Card -->
+<div class="p-3.5 rounded-md bg-white border border-slate-200 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-[20px] text-brand mb-1">payments</span>
+<span class="text-[11px] uppercase text-slate-600 font-semibold block">Fee Estimator</span>
+<p class="text-[18px] font-semibold text-slate-900 mt-0.5">₱3,450</p>
+</div>
+<span class="text-[12px] text-slate-600 mt-2 leading-tight">Remaining LGU &amp; BIR statutory dues</span>
+</div>
+<!-- City Hall Assistance Tile -->
+<div class="p-3.5 rounded-md bg-white border border-slate-200 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-[20px] text-brand mb-1">support_agent</span>
+<span class="text-[11px] uppercase text-slate-600 font-semibold block">Cebu City Hall</span>
+<p class="text-[16px] font-semibold text-slate-900 mt-0.5">Negosyo Desk</p>
+</div>
+<a class="text-[12px] text-brand font-semibold inline-flex items-center gap-1 mt-2" href="tel:0322556984">
+<span>Call 255-6984</span>
+<span class="material-symbols-outlined text-[14px]">call</span>
+</a>
+</div>
+</div>
+<!-- Language & Dialect Helper Strip -->
+<div class="p-3 rounded-md bg-white border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-600 text-[18px]">translate</span>
+<span class="text-[13px] text-slate-900 font-semibold">Panudlo sa Pagnenegosyo (Guides)</span>
+</div>
+<div class="flex items-center rounded border border-slate-200 bg-slate-50 p-0.5">
+<button class="px-2 py-0.5 rounded bg-brand text-white font-semibold text-[11px]" type="button">Ceb</button>
+<button class="px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 font-semibold text-[11px]" type="button">Eng</button>
+</div>
+</div>
+</section>
+<!-- MSME Community Encouragement Banner -->
+<section class="px-4 pb-6">
+<div class="rounded-md bg-white border border-slate-200 p-3.5 flex items-center gap-3">
+<div class="w-14 h-14 rounded-md border border-slate-200 shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A warm photo of a Cebuano coffee shop owner smiling behind an espresso machine in a modern artisan cafe setting in Cebu City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFafwkhiozjfl3YTpZEWF6ZFMbBMOKB5073vFv3v5jZuKJcOxQgdMlSNWkw6uz_oVrp6XrXQLPso5YB_oe2BS-sGhbDT4BMiXfN4lt4Yk0ZRnXpYTE32-mAFeJ8mi6E9EsOiv1lNDP4vkQDmz7PJxxgo6OfAdcWi042DWrJknT6oBk7EigEQ6ZlhyeR1uIBsZiPztREY9Im42iLpKJaVVpUbF0EMIAX6WXbDksVE4w0FRW46fpPAj2Mg"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[13px] text-slate-900 font-semibold">Padayon, Sugbuanong Negosyante!</p>
+<p class="text-[12px] text-slate-600 line-clamp-2 mt-0.5 leading-snug">Over 1,420 businesses in Cebu City completed their barangay permits this month without fixer fees.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-white border-t border-slate-200">
+<div class="flex items-center justify-around h-16 px-1">
+<a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-brand font-semibold" data-path="roadmap" href="#">
+<span class="material-symbols-outlined text-[22px]">alt_route</span>
+<span class="text-[11px]">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-slate-500 transition-colors hover:text-slate-900" data-path="clearances" href="#">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+<span class="text-[11px]">Clearances</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-slate-500 transition-colors hover:text-slate-900" data-path="apply" href="#">
+<span class="material-symbols-outlined text-[22px]">edit_document</span>
+<span class="text-[11px]">Apply</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-slate-500 transition-colors hover:text-slate-900" data-path="vault" href="#">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+<span class="text-[11px]">Vault</span>
+</a>
+</div>
+</nav>
+</body></html>
