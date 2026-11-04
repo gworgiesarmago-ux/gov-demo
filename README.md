@@ -32,14 +32,14 @@ Open http://127.0.0.1:5173/. The default screen is the signup/login welcome page
 - Flat sample fees: express delivery (PHP450) or pick-up (PHP300). These are demonstration amounts, not official assessments or capitalization tiers.
 - Draft saving, reload restoration, a real review step, and a unique local submission reference. Submitted applications and attachments are locked until demo data is cleared.
 - PDF/JPEG/PNG attachments with content-signature checks, a 10 MB limit, IndexedDB persistence, preview/download/removal. Progress reflects actual files; the vault starts empty.
-- Distinct, clearly marked sample PDF downloads with wrapped text, credential QR codes, and public sample-record lookup.
-- Copy identifiers, future sample calendar reminders with alarms, and a compliance ZIP containing actual attachments and separate sample PDFs. Exports show loading states.
+- Blank, single-page placeholder PDF downloads with document-specific filenames, credential QR codes, and public sample-record lookup.
+- Copy identifiers, future sample calendar reminders with alarms, and a compliance ZIP containing actual attachments and five blank placeholder PDFs. Exports show loading states.
 - Dialog keyboard support, notifications visible inside dialogs, guide-language toggle, and map link.
 - Profile → Clear demo data removes this browser's saved drafts and uploads.
 
 ## Scope
 
-This is a frontend demonstration with sample business records. Authentication, PhilSys/eGovPH, biometric verification, payments, SMS, and LGU submission are not connected. No actual permits are issued or verified. Generated PDFs and exports are clearly marked as samples.
+This is a frontend demonstration with sample business records. Authentication, PhilSys/eGovPH, biometric verification, payments, SMS, and LGU submission are not connected. No actual permits are issued or verified. Generated document PDFs are intentionally blank for now; their filenames and the surrounding interface identify them as demo placeholders. Uploaded originals retain their contents.
 
 Passwords are never stored. Profiles, drafts, and submission metadata stay in localStorage; uploads stay in IndexedDB. The demo session and pending verification profile use sessionStorage. Remembered login identifiers expire after 30 days. Use sample information.
 

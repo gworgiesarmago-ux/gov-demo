@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
+import { inflateSync } from 'node:zlib';
 import JSZip from 'jszip';
 
 const routes = ['index.html', 'welcome.html', 'roadmap.html', 'login.html', 'register.html', 'verify.html', 'clearances.html', 'apply.html', 'vault.html'];
@@ -35,6 +36,24 @@ async function downloadFrom(page, trigger) {
   await trigger.click();
   const result = await pending;
   return {name: result.suggestedFilename(), data: await readFile(await result.path())};
+}
+
+function expectBlankPdf(data) {
+  const source = data.toString('latin1');
+  expect(source.startsWith('%PDF-')).toBeTruthy();
+  expect(source.trimEnd().endsWith('%%EOF')).toBeTruthy();
+  const pages = [...source.matchAll(/\d+ 0 obj\s*<<([\s\S]*?)>>\s*endobj/g)]
+    .filter(match => /\/Type\s*\/Page\b/.test(match[1]));
+  expect(pages).toHaveLength(1);
+  const reference = pages[0][1].match(/\/Contents\s+(\d+)\s+0\s+R/);
+  expect(reference).not.toBeNull();
+  const stream = source.match(new RegExp(`\\b${reference[1]} 0 obj\\s*<<([\\s\\S]*?)>>\\s*stream\\r?\\n([\\s\\S]*?)\\r?\\nendstream`));
+  expect(stream).not.toBeNull();
+  const content = /\/FlateDecode\b/.test(stream[1])
+    ? inflateSync(Buffer.from(stream[2], 'latin1')).toString('latin1')
+    : stream[2];
+  // Graphics-state setup may remain, but text, images, and painting must not.
+  expect(content).not.toMatch(/(?:^|\s)(?:BT|Tj|TJ|Do|BI|sh|S|s|f\*?|F|B\*?|b\*?)(?=\s|$)/);
 }
 
 test('entry animates once per session and keeps account actions available on mobile', async ({ page }) => {
@@ -290,7 +309,7 @@ test('resend code enforces a cooldown and invalid OTP does not start a session',
   expect(await page.evaluate(() => sessionStorage.getItem('sugbo:session'))).toBeNull();
 });
 
-test('vault empty state and sample previews provide distinct valid PDFs', async ({ page }) => {
+test('document downloads provide blank single-page PDFs with distinct filenames', async ({ page }) => {
   await enterDemo(page);
   await visit(page, 'vault.html');
   await expect(page.getByRole('heading', {name: 'Your document vault is empty', exact: true})).toBeVisible();
@@ -299,10 +318,11 @@ test('vault empty state and sample previews provide distinct valid PDFs', async 
     await visit(page, route);
     await page.locator(`[data-action="preview-document"][data-document="${kind}"]`).click();
     await expect(page.getByRole('dialog')).toBeVisible();
-    const file = await downloadFrom(page, page.getByRole('button', {name: 'Download sample PDF', exact: true}));
+    await expect(page.getByRole('dialog')).toContainText('This document is blank for now.');
+    const file = await downloadFrom(page, page.getByRole('button', {name: 'Download blank PDF', exact: true}));
     names.push(file.name);
     expect(file.name).toMatch(/\.pdf$/);
-    expect(file.data.subarray(0, 5).toString()).toBe('%PDF-');
+    expectBlankPdf(file.data);
     await expect(page.locator('#dialog-toast')).toBeVisible();
     await expect(page.locator('#dialog-toast')).toContainText('download');
     await page.keyboard.press('Escape');
@@ -334,15 +354,17 @@ test('calendar exports future dated reminders with generation stamps and alarms'
   expect(content.match(/BEGIN:VALARM/g)).toHaveLength(3);
 });
 
-test('compliance packet contains distinct sample PDFs and clear demo instructions', async ({ page }) => {
+test('compliance packet contains five blank PDFs and clear placeholder instructions', async ({ page }) => {
   await enterDemo(page);
   await visit(page, 'vault.html');
   const file = await downloadFrom(page, page.locator('[data-action="export-packet"]'));
   expect(file.name).toMatch(/\.zip$/i);
   const zip = await JSZip.loadAsync(file.data);
   const names = Object.keys(zip.files);
-  expect(names.filter(name => name.endsWith('.pdf')).length).toBeGreaterThan(1);
-  expect(await zip.file('README.txt').async('string')).toMatch(/demo|sample/i);
+  const documents = names.filter(name => name.startsWith('samples/') && name.endsWith('.pdf'));
+  expect(documents).toHaveLength(5);
+  for (const name of documents) expectBlankPdf(await zip.file(name).async('nodebuffer'));
+  expect(await zip.file('README.txt').async('string')).toMatch(/blank/i);
   expect(names.some(name => name.includes('node_modules') || name.startsWith('dist/'))).toBeFalsy();
 });
 

@@ -145,9 +145,7 @@ fieldset[aria-invalid=true]{border:2px solid #b91c1c!important;background:#fff8f
 .app-notification.visible{opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
 #app-toast.visible{transform:translate(-50%,0)}
 #dialog-toast.visible{transform:translateY(0);max-height:240px;padding-block:14px;margin-top:18px}
-.sample-document{border:2px solid #0038a8;padding:24px;text-align:center}
-.sample-document h3{font-size:20px;font-weight:600;color:#0038a8;margin:15px 0}
-.sample-label{color:#991b1b;font-size:13px;font-weight:600;letter-spacing:.06em}
+.blank-document{min-height:200px;margin-top:16px;border:1px solid #dbe2ed;background:#fff}
 .noscript-notice{margin:20px;padding:16px;background:#fff1d2;border:1px solid #ca9e3d;color:#5d4115}
 [aria-busy=true]{cursor:progress}
 button[aria-busy=true]::before{content:"";width:16px;height:16px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:busy-spin .7s linear infinite;margin-right:8px;display:inline-block;vertical-align:middle}
